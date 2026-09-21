@@ -423,34 +423,24 @@
     </section>
 
     <!-- CONTATO / AGENDAMENTO -->
-    <section id="contato" class="bg-institutional-charcoal py-24 text-center lg:py-32">
-      <div class="mx-auto max-w-4xl px-5 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-institutional-gold">
-          Atendimento Institucional
-        </p>
-
-        <h2 class="mt-6 font-display text-5xl font-semibold text-white lg:text-6xl">
-          Decisões importantes começam com uma análise segura
-        </h2>
-
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/60">
-          Apresente as necessidades da sua empresa, grupo rural ou projeto político-institucional para uma avaliação técnica estratégica em Brasília.
-        </p>
-
-        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <a
-            href="mailto:atendimento@deijanetefayad.com.br?subject=Solicitação%20de%20Reunião%20Institucional"
-            class="inline-flex min-h-14 items-center justify-center bg-institutional-gold px-8 font-semibold text-black transition hover:bg-institutional-champagne"
-          >
-            Agendar Reunião
-          </a>
-
-          <a
-            href="mailto:atendimento@deijanetefayad.com.br"
-            class="inline-flex min-h-14 items-center justify-center border border-white/20 px-8 font-semibold text-white transition hover:border-institutional-gold hover:text-institutional-champagne"
-          >
-            atendimento@deijanetefayad.com.br
-          </a>
+    <section id="contato" class="bg-institutional-charcoal py-24 lg:py-32">
+      <div class="mx-auto max-w-5xl px-5 lg:px-8">
+        <div class="text-center">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-institutional-gold">Fale com a Dra. Deijanete</p>
+          <h2 class="mt-6 font-display text-5xl font-semibold text-white lg:text-6xl">Conte brevemente o seu caso</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80">Preencha os dados abaixo para facilitar o primeiro atendimento.</p>
+        </div>
+        <form class="mx-auto mt-12 grid max-w-3xl gap-5 text-left" action="mailto:atendimento@deijanetefayad.com.br" method="post" enctype="text/plain">
+          <div class="grid gap-5 md:grid-cols-2">
+            <label class="text-sm text-white">Nome<input required name="Nome" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
+            <label class="text-sm text-white">Sobrenome<input required name="Sobrenome" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
+          </div>
+          <label class="text-sm text-white">Assunto<input required name="Assunto" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
+          <label class="text-sm text-white">Pequeno relato<textarea required name="Relato" rows="5" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold" placeholder="Conte resumidamente como podemos ajudar."></textarea></label>
+          <button type="submit" class="min-h-14 bg-institutional-gold px-8 font-semibold text-black transition hover:bg-institutional-champagne">Enviar para análise</button>
+        </form>
+        <div class="mt-6 text-center">
+          <a href="https://wa.me/5561999812341?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Dra.%20Deijanete%20Fayad." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-14 items-center justify-center border border-institutional-gold px-8 font-semibold text-institutional-champagne transition hover:bg-institutional-gold hover:text-black">Falar pelo WhatsApp — (61) 99981-2341</a>
         </div>
       </div>
     </section>
