@@ -106,11 +106,11 @@
         <a class="transition hover:text-institutional-champagne" href="#brasilia">Onde Tudo Acontece</a>
         <a class="transition hover:text-institutional-champagne" href="#atuacao">Áreas de Atuação</a>
         <a class="transition hover:text-institutional-champagne" href="#palestras">Palestras</a>
-        <a class="transition hover:text-institutional-champagne" href="agronegocio.html">Contato</a>
+        <a class="transition hover:text-institutional-champagne" href="#contato">Contato</a>
       </div>
 
       <a
-        href="mailto:atendimento@deijanetefayad.com.br?subject=Solicitação%20de%20Reunião%20Institucional"
+        href="#contato"
         class="hidden border border-institutional-gold bg-institutional-gold px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-institutional-champagne sm:inline-flex"
       >
         Agendar Reunião
@@ -149,7 +149,7 @@
             </a>
 
             <a
-              href="mailto:atendimento@deijanetefayad.com.br?subject=Atendimento%20com%20a%20Dra.%20Deijanete"
+              href="#contato"
               class="inline-flex min-h-14 items-center justify-center border border-white/30 px-8 font-semibold text-white transition hover:border-institutional-gold hover:text-institutional-champagne"
             >
               Falar com a Dra. Deijanete
@@ -430,12 +430,28 @@
           <h2 class="mt-6 font-display text-5xl font-semibold text-white lg:text-6xl">Conte brevemente o seu caso</h2>
           <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80">Preencha os dados abaixo para facilitar o primeiro atendimento.</p>
         </div>
-        <form class="mx-auto mt-12 grid max-w-3xl gap-5 text-left" action="mailto:atendimento@deijanetefayad.com.br" method="post" enctype="text/plain">
+        <form class="mx-auto mt-12 grid max-w-3xl gap-6 text-left" action="mailto:atendimento@deijanetefayad.com.br" method="post" enctype="text/plain">
           <div class="grid gap-5 md:grid-cols-2">
             <label class="text-sm text-white">Nome<input required name="Nome" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
             <label class="text-sm text-white">Sobrenome<input required name="Sobrenome" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
           </div>
-          <label class="text-sm text-white">Assunto<input required name="Assunto" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
+
+          <fieldset class="border border-white/20 bg-black/20 p-6">
+            <legend class="px-2 font-semibold text-institutional-champagne">Qual é o principal tema do atendimento?</legend>
+            <p class="mb-5 mt-2 text-sm text-white/70">Marque uma ou mais opções:</p>
+            <div class="grid gap-4 text-sm text-white md:grid-cols-2">
+              <label class="flex cursor-pointer items-center gap-3"><input type="checkbox" name="Tema - Direito Tributário e Empresarial" class="h-5 w-5 accent-[#c7a66a]"> Direito Tributário e Empresarial</label>
+              <label class="flex cursor-pointer items-center gap-3"><input type="checkbox" name="Tema - Direito do Agronegócio" class="h-5 w-5 accent-[#c7a66a]"> Direito do Agronegócio</label>
+              <label class="flex cursor-pointer items-center gap-3"><input type="checkbox" name="Tema - Direito Político e Eleitoral" class="h-5 w-5 accent-[#c7a66a]"> Direito Político e Eleitoral</label>
+              <label class="flex cursor-pointer items-center gap-3"><input type="checkbox" name="Tema - Família e Sucessões" class="h-5 w-5 accent-[#c7a66a]"> Família e Sucessões</label>
+              <label class="flex cursor-pointer items-center gap-3"><input type="checkbox" name="Tema - Direito Civil e Contratos" class="h-5 w-5 accent-[#c7a66a]"> Direito Civil e Contratos</label>
+              <label class="flex cursor-pointer items-center gap-3"><input type="checkbox" name="Tema - Outro" class="h-5 w-5 accent-[#c7a66a]"> Outro</label>
+            </div>
+            <label class="mt-5 block text-sm text-white">Outro assunto
+              <input name="Outro assunto" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold" placeholder="Escreva aqui caso seu tema não esteja na lista.">
+            </label>
+          </fieldset>
+
           <label class="text-sm text-white">Pequeno relato<textarea required name="Relato" rows="5" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold" placeholder="Conte resumidamente como podemos ajudar."></textarea></label>
           <button type="submit" class="min-h-14 bg-institutional-gold px-8 font-semibold text-black transition hover:bg-institutional-champagne">Enviar para análise</button>
         </form>
