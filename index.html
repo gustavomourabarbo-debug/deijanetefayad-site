@@ -83,6 +83,15 @@
     "knowsAbout": ["Direito Tributário", "Direito do Agronegócio", "Direito Político e Eleitoral", "STF", "STJ", "TSE", "CARF"]
   }
   </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFLCDLE004"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NFLCDLE004');
+  </script>
 </head>
 
 <body class="overflow-x-hidden font-sans text-institutional-ivory antialiased">
@@ -748,6 +757,13 @@
       const relato = data.get('Relato') || '';
       const mensagem = ['Olá, gostaria de solicitar uma análise inicial.', 'Nome: ' + nome, 'Assunto: ' + (temas.join(', ') || outro || 'Não informado'), outro && temas.length ? 'Outro assunto: ' + outro : '', 'Relato: ' + relato].filter(Boolean).join('\n');
       window.open('https://wa.me/5561999812341?text=' + encodeURIComponent(mensagem), '_blank', 'noopener,noreferrer');
+    });
+  </script>
+  <script>
+    document.querySelectorAll('a[href*="wa.me/5561999812341"]').forEach(function(link){
+      link.addEventListener('click', function(){
+        if (typeof gtag === 'function') gtag('event', 'lead_whatsapp', {event_category:'lead', event_label: document.title});
+      });
     });
   </script>
 </body>
