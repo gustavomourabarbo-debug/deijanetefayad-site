@@ -60,6 +60,9 @@
       border: 1px solid rgba(199,166,106,0.45);
       pointer-events: none;
     }
+  
+    .whatsapp-float { position: fixed; right: 20px; bottom: 20px; z-index: 60; display: inline-flex; align-items: center; gap: 10px; border-radius: 9999px; background: #c7a66a; color: #090909; padding: 14px 18px; font-weight: 700; box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+    .whatsapp-float:hover { background: #e1ca9e; }
   </style>
 
   <script type="application/ld+json">
@@ -110,10 +113,11 @@
       </div>
 
       <a
-        href="#contato"
+        href="https://wa.me/5561999812341?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20da%20Dra.%20Deijanete%20Fayad."
+        target="_blank" rel="noopener noreferrer"
         class="hidden border border-institutional-gold bg-institutional-gold px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-institutional-champagne sm:inline-flex"
       >
-        Agendar Reunião
+        Falar agora
       </a>
     </nav>
   </header>
@@ -655,7 +659,7 @@
           <h2 class="mt-6 font-display text-5xl font-semibold text-white lg:text-6xl">Conte brevemente o seu caso</h2>
           <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80">Preencha os dados abaixo para facilitar o primeiro atendimento.</p>
         </div>
-        <form class="mx-auto mt-12 grid max-w-3xl gap-6 text-left" action="mailto:contato@deijanetefayad.com.br" method="post" enctype="text/plain">
+        <form id="lead-form" class="mx-auto mt-12 grid max-w-3xl gap-6 text-left">
           <div class="grid gap-5 md:grid-cols-2">
             <label class="text-sm text-white">Nome<input required name="Nome" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
             <label class="text-sm text-white">Sobrenome<input required name="Sobrenome" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold"></label>
@@ -680,7 +684,7 @@
           </fieldset>
 
           <label class="text-sm text-white">Pequeno relato<textarea required name="Relato" rows="5" class="mt-2 w-full border border-white/20 bg-black/30 p-4 text-white outline-none focus:border-institutional-gold" placeholder="Conte resumidamente como podemos ajudar."></textarea></label>
-          <button type="submit" class="min-h-14 bg-institutional-gold px-8 font-semibold text-black transition hover:bg-institutional-champagne">Enviar para análise</button>
+          <button type="submit" class="min-h-14 bg-institutional-gold px-8 font-semibold text-black transition hover:bg-institutional-champagne">Enviar pelo WhatsApp para análise</button>
         </form>
         <div class="mt-6 text-center">
           <a href="https://wa.me/5561999812341?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Dra.%20Deijanete%20Fayad." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-14 items-center justify-center border border-institutional-gold px-8 font-semibold text-institutional-champagne transition hover:bg-institutional-gold hover:text-black">Falar pelo WhatsApp — (61) 99981-2341</a>
@@ -688,6 +692,8 @@
       </div>
     </section>
   </main>
+
+  <a class="whatsapp-float" href="https://wa.me/5561999812341?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20da%20Dra.%20Deijanete%20Fayad." target="_blank" rel="noopener noreferrer" aria-label="Falar com a banca pelo WhatsApp">WhatsApp • Fale agora</a>
 
   <!-- RODAPÉ -->
   <footer class="border-t border-white/10 bg-institutional-black">
@@ -729,5 +735,20 @@
     </div>
   </footer>
 
+  <script>
+    document.getElementById('lead-form')?.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const data = new FormData(this);
+      const temas = [];
+      for (const [key, value] of data.entries()) {
+        if (key.startsWith('Tema - ')) temas.push(key.replace('Tema - ', ''));
+      }
+      const nome = [data.get('Nome'), data.get('Sobrenome')].filter(Boolean).join(' ');
+      const outro = data.get('Outro assunto') || '';
+      const relato = data.get('Relato') || '';
+      const mensagem = ['Olá, gostaria de solicitar uma análise inicial.', 'Nome: ' + nome, 'Assunto: ' + (temas.join(', ') || outro || 'Não informado'), outro && temas.length ? 'Outro assunto: ' + outro : '', 'Relato: ' + relato].filter(Boolean).join('\n');
+      window.open('https://wa.me/5561999812341?text=' + encodeURIComponent(mensagem), '_blank', 'noopener,noreferrer');
+    });
+  </script>
 </body>
 </html>
